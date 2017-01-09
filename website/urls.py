@@ -16,7 +16,19 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from music import views
+
+
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
-    url(r'^music/', include('music.urls')),
+    # url(r'^music/', include('music.urls')),
+
+    url(r'^$', views.index, name='index'),
+    url(r'^index.html$', views.index, name='index'),
+    url(r'^semester1.html$', views.semester1, name='sem1'),
+    url(r'^semester2.html$', views.semester2, name='sem2'),
+    url(r'^semester3.html$', views.semester3, name='sem3'),
+    url(r'^semester5.html$', views.semester5, name='sem5'),
+
 ]
